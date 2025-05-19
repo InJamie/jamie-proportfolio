@@ -25,7 +25,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /*place-items: center;*/
   min-width: 320px;
   min-height: 100vh;
 }
@@ -36,18 +36,24 @@ h1 {
 }
 
 button {
+
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #5f778f;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: white;
+  /*这里这个标签不生效不知道为什么？
+  可能只能应用类上，不能用在标签上*/
+  /*@apply rounded-b-lg shadow-md;*/
+
 }
-button:hover {
-  border-color: #646cff;
+  button:hover {
+  background-color: #2a6cc5;
 }
 button:focus,
 button:focus-visible {
@@ -63,9 +69,15 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #0986e3;
   }
 }
 /* 引入tailWindcss */
-@import "tailwindcss";
+/*这是4.1版本*/
+/*@import "tailwindcss";*/
+
+/*这是3.4.17版本*/
+/*@tailwind base;*/
+/*@tailwind components;*/
+/*@tailwind utilities;*/
 
