@@ -1,128 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import pitureMyself from './assets/WechatIMG5905.jpg'
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import RoutesPage from "./pages/Routes";
+import './index.css';
+import Gitee from "./assets/gitee-svg.svg";
+import Github from "./assets/github-svg.svg";
+import Wechat from "./assets/wechat-svg.svg"
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-      <>
-          <div className="gap-x-10 space-x-10 space-y-10">
-              <h1>Jamie`s Website </h1>
-              <div className="flex grid-cols-2 gap-4">
-                  <div className="w-1/2 bg-red-100">
-                      <p className="font-bold">Hello! I'm Ada Lee, a multidisciplinary designer based in San Francisco.</p>
-                      With over 8 years of experience, I thrive at the intersection of digital design, UX/UI, and brand identity. My passion lies in crafting seamless user experiences and visually compelling designs that resonate with audiences and drive engagement.
-                  </div>
-                  <img src={pitureMyself} alt="自拍照"
-                  className="w-1/2"
-                  />
-              </div>
+    <BrowserRouter>
+      {/* <div className="min-h-screen flex flex-col"> */}
+      <div className="w-full max-w-screen-lg mx-auto px-4">
+        {/* 固定 Header */}
+        <header className="bg-red-200 p-4 flex justify-between">
+          <a href="/">
+          <svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100"
+  fill="currentColor"
+  className="w-12 h-12 text-blue-600 bg-base-200 rounded-xl text-xl"
+>
+  <text x="30" y="70" fontSize="60" fontFamily="Arial" fontWeight="bold">J</text>
+</svg>
+          </a>
+          <nav className="space-x-4">
+            <Link to="/" className="btn btn-sm btn-ghost">首页</Link>
+            <Link to="/routes" className="btn btn-sm btn-ghost">路线</Link>
+          </nav>
+        </header>
 
-              <div>
-                  <h2 className="font-bold text-2xl pb-4"> 🌈 About Me</h2>
-                  I'm a creative thinker, a problem solver, and an avid learner, always exploring new trends and
-                  techniques in design. When I'm not pushing pixels, you can find me with a sketchbook, capturing the
-                  world or lost in the pages of a good design book.
-              </div>
+        {/* 中间内容区域 */}
+        <main className="flex-1 bg-base-100">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/routes" element={<RoutesPage />} />
+          </Routes>
+        </main>
 
-              <div>
-                  <h2 className="font-bold text-2xl pb-4"> 💼 Experience</h2>
-                  <h3 className="font-bold text-xl">Senior UX/UI Designer - Creative Minds Inc. | June 2018 - Present
-                  </h3>
-                  <ul className="list-disc pl-5 pb-4">
-                      <li>- Lead the design of intuitive user interfaces for mobile and web applications, enhancing user
-                          satisfaction and engagement.
-                      </li>
-                      <li>- Collaborate with cross-functional teams to create cohesive brand experiences across all
-                          platforms.
-                      </li>
-                      <li>- Mentor junior designers, fostering a collaborative and innovative design culture.</li>
-                  </ul>
+        {/* 固定 Footer */}
+        <footer className="p-4 text-center mb-10">
+            {/* fllow me */}
+            <div className="pt-30 flex flex-col justify-center items-center mb-10 sm:mb-28 border-t-2 border-base-200">
+                <p className="text-3xl">Follow me</p>
+                {/* 联系方式图标+跳转 */}
+                <div className="flex flex-row gap-4 mt-5">
+                    <img src={Gitee} alt="Gitee" className="w-10 h-10" />
+                    <img src={Github} alt="Github" className="w-10 h-10" />
+                    <img src={Wechat} alt="Wechat" className="w-10 h-10" />
 
-                  <h3 className="font-bold text-xl">Graphic Designer - BrandWorks Agency | Jan 2014 - May 2018</h3>
-                  <ul className="list-disc pl-5">
-                      <li>- Developed brand identities, including logos, typography, and color schemes, for over 30 clients.</li>
-                      <li>- Produced marketing materials, digital ads, and promotional content, resulting in a 25% increase
-                      in client engagement for key accounts.</li>
-                  </ul>
-              </div>
-
-              <div>
-                  <h2 className="font-bold text-2xl pb-4"> 🎓 Education</h2>
-                  <h3 className="font-bold text-xl">Master of Fine Arts in Design - Rhode Island School of Design |
-                      2013</h3>
-
-                  <ul className="list-disc pl-5 pb-4">
-                      <li>- Specialized in Digital + Media</li>
-                      <li>- Thesis: "Interactivity and User Engagement in Digital Platforms"</li>
-                  </ul>
-                  <h3 className="font-bold text-xl"> Bachelor of Arts in Graphic Design - University of California,
-                      Berkeley | 2011</h3>
-                  <ul className="list-disc pl-5">
-                      <li>- Graduated with Honors</li>
-                      <li>- Relevant coursework: Typography, Web Design, Digital Photography</li>
-                  </ul>
-
-
-              </div>
-              <div>
-                  <h2 className="font-bold text-2xl pb-4">🚀 Projects</h2>
-                  <h3 className="font-bold text-xl">"EcoLife" Mobile App</h3>
-
-
-                  <ul className="list-disc pl-5 pb-4">
-                      <li>- An environmentally-focused app designed to encourage sustainable living through daily
-                          challenges,
-                          tips, and community engagement.</li>
-                      <li>- Role: Lead Designer</li>
-                      <li>- Tools: Sketch, InVision, Adobe Creative Suite</li>
-                  </ul>
-
-                  <h3 className="font-bold text-xl">"Brand Reimagined" - Cafe Fresco</h3>
-                  <ul className="list-disc pl-5">
-                      <li> - A complete rebranding project for a local café, including logo redesign, packaging, and in-store
-                          visuals, resulting in a 40% increase in foot traffic.</li>
-                      <li>- Role: Brand Strategist & Designer</li>
-                      <li>- Tools: Illustrator, Photoshop, Procreate</li>
-                  </ul>
-
-              </div>
-              <div>
-                  <h2 className="font-bold text-2xl pb-4">🔨 Skills</h2>
-
-                  <ul className="list-disc pl-5">
-                      <li>- User Experience (UX) Design</li>
-                      <li>- User Interface (UI) Design</li>
-                      <li>- Branding & Visual Identity</li>
-                      <li>- Adobe Creative Suite</li>
-                      <li>- Sketch & InVision</li>
-                      <li>- Prototyping & Wireframing</li>
-                  </ul>
-
-              </div>
-
-              <div>
-                  <h2 className="font-bold text-2xl pb-4"> 📬 Contact</h2>
-
-                  Let's create something amazing together! Reach out to me at:
-                  <ul className="list-disc pl-5">
-                      <li>- Email: [ada@yourdomain.com](mailto:ada@yourdomain.com) <a href="ada@yourdomain.com"></a></li>
-                      <li>- LinkedIn: [linkedin.com/in/adalee](https://www.linkedin.com/in/adalee) <a href="https://www.linkedin.com/in/adalee"></a></li>
-                      <li>- Portfolio: [adaleedesigns.com](http://adaleedesigns.com/) <a href="http://adaleedesigns.com"></a></li>
-                  </ul>
-                  
-                      
-                      
-
-                      Thanks for stopping by my corner of the internet! 💫
-              </div>
-          </div>
-
-      </>
-)
+                </div>
+            </div>
+            {/* copyright */}
+            © Jamie的巴拉巴拉公司</footer>
+      </div>
+    </BrowserRouter>
+  );
 }
-
-          export default App
