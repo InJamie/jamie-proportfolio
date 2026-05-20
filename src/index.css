@@ -16,7 +16,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: balck;
   text-decoration: inherit;
 }
 a:hover {
@@ -54,7 +54,7 @@ button {
 
 }
   button:hover {
-  background-color: #2a6cc5;
+  background-color: #5046e4;
 }
 button:focus,
 button:focus-visible {
@@ -70,7 +70,10 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #0986e3;
+    background-color: #6466f1;
+    font-weight: 600;
+    margin: 4px
+    
   }
 }
 /* 引入tailWindcss */

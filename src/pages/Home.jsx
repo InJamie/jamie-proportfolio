@@ -3,7 +3,6 @@ import pictureMyself from '../assets/WechatIMG5905.jpg'
 
 const Home = ()=>{
     return <>
-    
     <div className="gap-x-10 space-x-10 space-y-10">
               <h1>Jamie`s Website </h1>
               <div className="flex grid-cols-2 gap-4">
