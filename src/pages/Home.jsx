@@ -1,131 +1,117 @@
-import pictureMyself from '../assets/WechatIMG5905.jpg'
+import pictureMyself from "../assets/WechatIMG5905.jpg";
 
+function Section({ title, children }) {
+  return (
+    <section className="card section-card">
+      <h2 className="section-title">{title}</h2>
+      {children}
+    </section>
+  );
+}
 
-const Home = ()=>{
-    return <>
-    <div className="gap-x-10 space-x-10 space-y-10">
-              <h1>Jamie`s Website </h1>
-              <div className="flex grid-cols-2 gap-4">
-                  <div className="w-1/2 bg-red-100">
-                      <p className="font-bold">Hello! I'm Ada Lee, a multidisciplinary designer based in San
-                          Francisco.</p>
-                      With over 8 years of experience, I thrive at the intersection of digital design, UX/UI, and brand
-                      identity. My passion lies in crafting seamless user experiences and visually compelling designs
-                      that resonate with audiences and drive engagement.
-                  </div>
-                  <img src={pictureMyself} alt="自拍照"
-                       className="w-1/2"
-                  />
-              </div>
-
-              <div>
-                  <h2 className="font-bold text-2xl pb-4"> 🌈 About Me</h2>
-                  I'm a creative thinker, a problem solver, and an avid learner, always exploring new trends and
-                  techniques in design. When I'm not pushing pixels, you can find me with a sketchbook, capturing the
-                  world or lost in the pages of a good design book.
-              </div>
-
-              <div>
-                  <h2 className="font-bold text-2xl pb-4"> 💼 Experience</h2>
-                  <h3 className="font-bold text-xl">Senior UX/UI Designer - Creative Minds Inc. | June 2018 - Present
-                  </h3>
-                  <ul className="list-disc pl-5 pb-4">
-                      <li>- Lead the design of intuitive user interfaces for mobile and web applications, enhancing user
-                          satisfaction and engagement.
-                      </li>
-                      <li>- Collaborate with cross-functional teams to create cohesive brand experiences across all
-                          platforms.
-                      </li>
-                      <li>- Mentor junior designers, fostering a collaborative and innovative design culture.</li>
-                  </ul>
-
-                  <h3 className="font-bold text-xl">Graphic Designer - BrandWorks Agency | Jan 2014 - May 2018</h3>
-                  <ul className="list-disc pl-5">
-                      <li>- Developed brand identities, including logos, typography, and color schemes, for over 30
-                          clients.
-                      </li>
-                      <li>- Produced marketing materials, digital ads, and promotional content, resulting in a 25%
-                          increase
-                          in client engagement for key accounts.
-                      </li>
-                  </ul>
-              </div>
-
-              <div>
-                  <h2 className="font-bold text-2xl pb-4"> 🎓 Education</h2>
-                  <h3 className="font-bold text-xl">Master of Fine Arts in Design - Rhode Island School of Design |
-                      2013</h3>
-
-                  <ul className="list-disc pl-5 pb-4">
-                      <li>- Specialized in Digital + Media</li>
-                      <li>- Thesis: "Interactivity and User Engagement in Digital Platforms"</li>
-                  </ul>
-                  <h3 className="font-bold text-xl"> Bachelor of Arts in Graphic Design - University of California,
-                      Berkeley | 2011</h3>
-                  <ul className="list-disc pl-5">
-                      <li>- Graduated with Honors</li>
-                      <li>- Relevant coursework: Typography, Web Design, Digital Photography</li>
-                  </ul>
-
-
-              </div>
-              <div>
-                  <h2 className="font-bold text-2xl pb-4">🚀 Projects</h2>
-                  <h3 className="font-bold text-xl">"EcoLife" Mobile App</h3>
-
-
-                  <ul className="list-disc pl-5 pb-4">
-                      <li>- An environmentally-focused app designed to encourage sustainable living through daily
-                          challenges,
-                          tips, and community engagement.
-                      </li>
-                      <li>- Role: Lead Designer</li>
-                      <li>- Tools: Sketch, InVision, Adobe Creative Suite</li>
-                  </ul>
-
-                  <h3 className="font-bold text-xl">"Brand Reimagined" - Cafe Fresco</h3>
-                  <ul className="list-disc pl-5">
-                      <li> - A complete rebranding project for a local café, including logo redesign, packaging, and
-                          in-store
-                          visuals, resulting in a 40% increase in foot traffic.
-                      </li>
-                      <li>- Role: Brand Strategist & Designer</li>
-                      <li>- Tools: Illustrator, Photoshop, Procreate</li>
-                  </ul>
-
-              </div>
-              <div>
-                  <h2 className="font-bold text-2xl pb-4">🔨 Skills</h2>
-
-                  <ul className="list-disc pl-5">
-                      <li>- User Experience (UX) Design</li>
-                      <li>- User Interface (UI) Design</li>
-                      <li>- Branding & Visual Identity</li>
-                      <li>- Adobe Creative Suite</li>
-                      <li>- Sketch & InVision</li>
-                      <li>- Prototyping & Wireframing</li>
-                  </ul>
-
-              </div>
-
-              <div>
-                  <h2 className="font-bold text-2xl pb-4"> 📬 Contact</h2>
-
-                  Let's create something amazing together! Reach out to me at:
-                  <ul className="list-disc pl-5">
-                      <li>- Email: [ada@yourdomain.com](mailto:ada@yourdomain.com) <a href="ada@yourdomain.com"></a>
-                      </li>
-                      <li>- LinkedIn: [linkedin.com/in/adalee](https://www.linkedin.com/in/adalee) <a
-                          href="https://www.linkedin.com/in/adalee"></a></li>
-                      <li>- Portfolio: [adaleedesigns.com](http://adaleedesigns.com/) <a
-                          href="http://adaleedesigns.com"></a></li>
-                  </ul>
-
-
-                  Thanks for stopping by my corner of the internet! 💫
-              </div>
+export default function Home() {
+  return (
+    <div className="space-y-5 pb-4">
+      <section className="card hero-card">
+        <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
+          <div className="flex-1 order-2 lg:order-1">
+            <span className="tag mb-4">Portfolio · 2025</span>
+            <h1 className="hero-title">Jamie&apos;s Website</h1>
+            <p className="hero-subtitle mt-3">
+              你好，我是 Jamie。热爱设计与开发，正在打造自己的数字作品集与效率小工具。
+            </p>
           </div>
-    </>
-    };
+          <img
+            src={pictureMyself}
+            alt="Jamie"
+            className="hero-image order-1 lg:order-2 mx-auto lg:mx-0"
+          />
+        </div>
+      </section>
 
-export default Home;
+      <Section title="About Me">
+        <p className="text-[var(--color-text-muted)] leading-relaxed">
+          喜欢把想法变成可用的产品界面，关注用户体验与视觉一致性。
+          业余时间会折腾番茄钟、日历等小工具，让日常更高效。
+        </p>
+      </Section>
+
+      <Section title="Experience">
+        <div className="space-y-6">
+          <div>
+            <p className="entry-title">全栈 / 前端开发（个人项目）</p>
+            <p className="entry-meta">2024 — 至今</p>
+            <ul className="list-clean">
+              <li>使用 React + Vite 搭建个人作品集网站</li>
+              <li>实现番茄钟、日程日历等交互功能</li>
+              <li>统一站点视觉风格与设计系统</li>
+            </ul>
+          </div>
+          <div>
+            <p className="entry-title">设计 & 开发学习</p>
+            <p className="entry-meta">持续进行中</p>
+            <ul className="list-clean">
+              <li>学习 UI/UX 设计与 Tailwind CSS</li>
+              <li>探索组件化开发与路由架构</li>
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Projects">
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="p-4 rounded-xl bg-[var(--color-brand-light)] border border-[var(--color-brand-muted)]">
+            <p className="font-bold text-[var(--color-text)] mb-1">🍅 番茄闹钟</p>
+            <p className="text-sm text-[var(--color-text-muted)]">
+              25 分钟专注 + 5 分钟休息，帮助保持工作节奏。
+            </p>
+          </div>
+          <div className="p-4 rounded-xl bg-[var(--color-brand-light)] border border-[var(--color-brand-muted)]">
+            <p className="font-bold text-[var(--color-text)] mb-1">📅 日程日历</p>
+            <p className="text-sm text-[var(--color-text-muted)]">
+              月视图管理事件，规划每日安排。
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Skills">
+        <div className="flex flex-wrap gap-2">
+          {["React", "JavaScript", "Tailwind CSS", "UI Design", "Git"].map((skill) => (
+            <span key={skill} className="tag">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Contact">
+        <p className="text-[var(--color-text-muted)] mb-4">
+          欢迎交流合作，可以通过以下方式联系我：
+        </p>
+        <ul className="list-clean">
+          <li>
+            Email:{" "}
+            <a
+              href="mailto:jamie@example.com"
+              className="text-[var(--color-brand-dark)] font-medium hover:underline"
+            >
+              jamie@example.com
+            </a>
+          </li>
+          <li>
+            GitHub:{" "}
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[var(--color-brand-dark)] font-medium hover:underline"
+            >
+              github.com
+            </a>
+          </li>
+        </ul>
+      </Section>
+    </div>
+  );
+}
